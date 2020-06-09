@@ -7,8 +7,8 @@ const tokenValidator = require("./auth/tokenValidator");
 server.use( express.json());
 
 server.use('/api', logger, authRoute);
-server.use('/api', tokenValidator ,logger, usersRoute);
-server.get('/',  logger, (req, res) => {
+server.use('/api', logger, usersRoute);
+server.get('/', tokenValidator ,logger, (req, res) => {
     res.send('At Root')
 })
 

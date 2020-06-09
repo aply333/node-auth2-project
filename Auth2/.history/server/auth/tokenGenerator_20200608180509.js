@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const tokenSecret = require('./tokenSecret');
+const secret = require('./tokenSecret');
 
 module.exports = tokenMake;
 
@@ -8,7 +8,7 @@ function tokenMake(user){
         subject: user.id,
         username: user.username
     }
-    const secret = tokenSecret.jwt_secret;
+    const secret = secret;
     const options = {
         expiresIn: '1h',
     }
